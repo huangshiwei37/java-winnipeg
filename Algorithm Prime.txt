@@ -1,0 +1,21 @@
+check if we can divide the number evenly by 1 ...N 
+
+var Number: numberToCheck
+var Number: counter
+var Number: remainder
+var Boolean: isNumberPrime 
+
+isNumberPrime <- True
+counter <- 2
+
+while((counter < numberToCheck) and isNumberPrime)
+
+  remainder <- numberToCheck mod counter
+
+  if (remainder == 0)
+    isNumberPrime <- false
+  end if
+
+  counter <- counter + 1
+
+end while

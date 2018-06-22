@@ -1,0 +1,33 @@
+
+sum the first N numbers that are divisible by 3, with the first N nnumbers divisible by 5
+sumOfNumbersDivisibleBy3
+
+Algorithm Main
+
+   var Number: N, sum
+   read(N)
+
+   sum <- sumOfNumbersDivisibleByMultiple(N, 3) + sumOfNumbersDivisibleByMultiple(N, 5)
+
+End Main
+
+
+Algorithm sumOfNumbersDivisibleByMultiple(Number: totalNumber, Number: multiple): Number
+
+  var Number: sum <- 0
+  var Number: nextNumberToAdd <- 3
+  var Number: counter <- 0
+
+  while (counter < totalNumber)
+
+    sum <- sum + nextNumberToAdd
+    nextNumberToAdd <- nextNumberToAdd + 3
+    counter <- counter + 1
+
+  end while
+
+  return sum
+
+end sumOfNumbersDivisibleByMultiple
+
+

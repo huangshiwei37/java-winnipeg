@@ -1,0 +1,40 @@
+
+algorithm calculateTotal
+
+  var Number: gross, discount, net, tax, total
+
+  read(gross)
+
+  discount = calculateDiscount(gross)
+
+  net = gross - discount
+
+  tax = calculateTax(net)
+
+  total = net + tax
+
+end calculateTotal
+
+
+algorithm calculateDiscount (Number: gross): Number
+
+  var Number: discount
+
+  if (gross < 1000) then
+    discount = gross * 0.3
+  else
+    discount = gross * 0.35
+  end if
+
+  if discount > 500 then
+    discount = 500
+  end if
+
+end calculateDiscount
+
+
+algorithm calculateTax (Number: net): Number
+
+  return net * 0.13
+
+end calculateTax

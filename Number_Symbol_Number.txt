@@ -1,0 +1,15 @@
+
+1. number Strings/Symbols
+
+e.g.,
+
+phone numbers
+
+Address (street number)
+
+2. mathematical numbers
+
+Add them together
+
+
+

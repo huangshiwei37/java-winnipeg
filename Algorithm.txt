@@ -1,0 +1,45 @@
+
+Algorithm checkLeapYear
+
+  var Number: year
+  var Boolean: isYearDivisibleBy4
+  var Boolean: isYearDivisibleBy100
+  var Boolean: isYearDivisibleBy400
+  var Boolean: isYearALeapYear <- True
+
+  read(year)
+
+  isYearDivisibleBy4 <- checkIfNumberIsDivisibleBy(year, 4)
+  isYearDivisibleBy100 <- checkIfNumberIsDivisibleBy(year, 100)
+  isYearDivisibleBy400 <- checkIfNumberIsDivisibleBy(year, 400)
+
+  if (!isYearDivisibleBy4) or 
+    (isYearDivisibleBy4 && isYearDivisibleBy100 && !isYearDivisibleBy400) then
+    isYearALeapYear <- False
+  end if
+
+  if (isYearALeapYear) then
+    print("It is a leap year!")
+  else
+    print("It is not a leap year!")
+  end if
+
+End checkLeapYear
+
+
+Algorithm checkIfNumberIsDivisibleBy(Number: numberToCheck, Number: multiple): Boolean
+
+  var Number: remainder
+  var Boolean: isNumberDivisible
+
+  remainder <- numberToCheck mod multiple
+
+  if (remainder == 0) then
+    isNumberDivisible <- True
+  else if
+    isNumberDivisible <- False
+  end if
+
+  return isNumberDivisible
+
+End checkIfNumberIsDivisibleBy

@@ -1,0 +1,3 @@
+functions: have a return value
+
+methods: have no return value
