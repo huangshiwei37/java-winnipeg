@@ -1,0 +1,100 @@
+
+Algorithm precipitation
+
+  var Number: year
+  var Number: month
+  read(year)
+  read(month)
+
+  var Number: numberOfDaysOfAMonth 
+  numberOfDaysOfAMonth <- checkNumberOfDaysOfAMonth(month, year)
+
+  var Number[numberOfDaysOfAMonth]: precipitations <- 0
+
+  // record precipitations in a month
+  var Number: counter <-0
+  var Number: precipitationToday
+  while (counter < numberOfDaysOfAMonth)
+    print("Enter the percipitation if it rained on Day " 
+          + (counter + 1) + " Month " + month + " Year " + year)
+    read(precipitationToday)
+    precipitations[counter] = precipitationToday
+  end while
+
+  // total precipitation of a month
+  var Numer: totalPrecipitation
+  totalPrecipitation <- calculateSumOfAnArray(precipitations)
+  print("The total precipitation this month is " + totalPrecipitation)
+
+  // maximum precipitation in a month
+  var Number: maxPrecipitation
+  var Number: dayWithMaxPrecipitation
+  var Number[]: maxValueAndIndex
+  maxValueAndIndex <- calculateMaximumValueOfAnArray(precipitations)
+  maxPrecipitation <- maxValueAndIndex[0]
+  dayWithMaxPrecipitation <- maxValueAndIndex[1] + 1
+  print("The maximum precipitation of this month is " + maxPrecipitation 
+      + "on Day " + dayWithMaxPrecipitation)
+
+  // display two days that it rained in a row
+  printTwoDaysItRainedInARow(precipitations)
+
+End precipitation
+
+
+Algorithm calculateSumOfAnArray(Number[]: array): Number
+  var Number: counter <- 0
+  var Number: length <- length of array
+  var sum <- 0
+
+  while (counter < length)
+    sum <- sum + array[counter]
+  End while
+
+  return sum
+End calculateSumOfAnArray
+
+
+Algorithm calculateMaximumValueOfAnArray(Number[]: array): Number[]
+  var Number: counter <- 0
+  var Number: length <- length of array
+  var Number[2]: maxValueAndIndex // {max value, index}
+
+  maxValueAndIndex[0] <- array[0]
+  maxValueAndIndex[1] <- 0
+  counter <- 1
+
+  while (counter < length)
+    if (array[counter] > maxValueAndIndex[0]) 
+      maxValueAndIndex[0] <- array[counter]
+      maxValueAndIndex[1] <- counter
+    end if
+  End while
+
+  return maxValueAndIndex
+End calculateMaximumValueOfAnArray
+
+
+Algorithm printTwoDaysItRainedInARow(Number[]: precipitations): void
+  var Boolean: isItRainedYesterday
+  var Boolean: isItRainedToday
+  var Number: counter 
+  var Number: length
+
+  isItRainedYesterday <- (precipitations[0] > 0)
+  counter <- 1
+  length <- length of precipitations
+
+  while (counter < length)
+    isItRainedToday <- (precipitations[counter] > 0)
+
+    if (isItRainedYesterday) && (isItRainedToday)
+      print("It rained on days " + counter + " and " + (counter + 1))
+    end if
+
+    isItRainedYesterday <- isItRainedToday
+  end while
+End printTwoDaysItRainedInARow
+
+
+

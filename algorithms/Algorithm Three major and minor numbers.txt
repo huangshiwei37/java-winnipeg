@@ -1,0 +1,115 @@
+
+Algorithm Main
+
+  var Number[]: numbers
+
+  // read numbers from keyboard
+  numbers <- readNumbers()
+
+  // display the first 3 major numbers
+  var Number[3]: findThreeMajorNumbers(numbers)
+  print("The first 3 major numbers are " 
+      + threeMajorNumbers[0]
+      + threeMajorNumbers[1]
+      + threeMajorNumbers[2])
+
+  // display the first 3 minor numbers
+  var Number[3]: findThreeMinorNumbers(numbers)
+  print("The first 3 minor numbers are " 
+      + threeMinorNumbers[0]
+      + threeMinorNumbers[1]
+      + threeMinorNumbers[2])
+
+End Main
+
+
+Algorithm readNumbers(): Number[]
+  var Char: controlKey <- 'a'
+  var Number: counter <- 0
+  var Number[]: numbers
+
+  while (controlKey != 'q')
+    print("Please enter a number")
+    read(numbers[counter])
+    counter <- counter + 1
+
+    print("You can stop by typing 'q' or continue by typing any other key")
+    read(controlKey)
+  end while
+End readNumbers
+
+
+Algorithm findThreeMajorNumbers(Number[]: numbers): Number[]
+  var Number[3]: threeMajorNumbers
+  threeMajorNumbers[0] = numbers[0] // maximum value
+  threeMajorNumbers[1] = numbers[0] // second maximum value
+  threeMajorNumbers[2] = numbers[0] // third maximum value
+
+  var Number: counter = 0
+  var Number: length = length of numbers
+
+  while (counter < length)
+    if (numbers[counter] > threeMajorNumbers[0])
+      oldMaximumValue = threeMajorNumbers[0]
+      threeMajorNumbers[0] = numbers[counter]
+      if (oldMaximumValue > threeMajorNumbers[1])
+        oldSecondMaximumValue = threeMajorNumbers[1]
+        threeMajorNumbers[1] = oldMaximumValue
+        if (oldSecondMaximumValue > threeMajorNumbers[2])
+          threeMajorNumbers[2] = oldSecondMaximumValue
+        end if 
+      else if (oldMaximumValue < threeMajorNumbers[1]) (oldMaximumValue > threeMajorNumbers[2])
+        threeMajorNumbers[2] = oldMaximumValue
+      end if 
+    else if (numbers[counter] < threeMajorNumbers[0]) && (numbers[counter] > threeMajorNumbers[1])
+      oldSecondMaximumValue = threeMajorNumbers[1]
+      threeMajorNumbers[1] = numbers[counter]
+      if (oldSecondMaximumValue > threeMajorNumbers[2])
+        threeMajorNumbers[2] = oldSecondMaximumValue
+      end if       
+    else if (numbers[counter] < threeMajorNumbers[1]) && (numbers[counter] > threeMajorNumbers[2])
+      threeMajorNumbers[2] = numbers[counter]
+    end if
+    counter <- counter + 1
+  end while
+
+  return threeMajorNumbers
+End findThreeMajorNumbers
+
+
+Algorithm findThreeMinorNumbers(Number[]: numbers): Number[]
+  var Number[3]: threeMinorNumbers
+  threeMinorNumbers[0] = numbers[0] // maximum value
+  threeMinorNumbers[1] = numbers[0] // second maximum value
+  threeMinorNumbers[2] = numbers[0] // third maximum value
+
+  var Number: counter = 0
+  var Number: length = length of numbers
+
+  while (counter < length)
+    if (numbers[counter] < threeMinorNumbers[0])
+      oldMinimumValue = threeMinorNumbers[0]
+      threeMinorNumbers[0] = numbers[counter]
+      if (oldMinimumValue < threeMinorNumbers[1])
+        oldSecondMinimumValue = threeMinorNumbers[1]
+        threeMinorNumbers[1] = oldMinimumValue
+        if (oldSecondMinimumValue > threeMinorNumbers[2])
+          threeMinorNumbers[2] = oldSecondMinimumValue
+        end if 
+      else if (oldMinimumValue > threeMinorNumbers[1]) (oldMinimumValue < threeMinorNumbers[2])
+        threeMinorNumbers[2] = oldMinimumValue
+      end if 
+    else if (numbers[counter] > threeMinorNumbers[0]) && (numbers[counter] < threeMinorNumbers[1])
+      oldSecondMinimumValue = threeMinorNumbers[1]
+      threeMinorNumbers[1] = numbers[counter]
+      if (oldSecondMinimumValue < threeMinorNumbers[2])
+        threeMinorNumbers[2] = oldSecondMinimumValue
+      end if       
+    else if (numbers[counter] > threeMinorNumbers[1]) && (numbers[counter] < threeMinorNumbers[2])
+      threeMinorNumbers[2] = numbers[counter]
+    end if
+    counter <- counter + 1
+  end while
+
+  return threeMinorNumbers
+End findThreeMinorNumbers

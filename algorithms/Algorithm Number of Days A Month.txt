@@ -1,0 +1,65 @@
+
+Algorithm checkNumberOfDaysOfAMonth(Number: month, Number: year)
+
+  var Number: numberOfDays
+
+  switch (month):
+    case 1:
+      numberOfDays = 31
+      break
+
+    case 2:
+      if checkIfYearIsALeapYear(year)
+        numberOfDays = 29
+      else
+        numberOfDays = 28
+      end if
+      break
+
+    case 3:
+      numberOfDays = 31
+      break
+
+    case 4:
+      numberOfDays = 30
+      break
+
+    case 5:
+      numberOfDays = 31
+      break
+
+    case 6:
+      numberOfDays = 30
+      break
+
+    case 7:
+      numberOfDays = 31
+      break
+
+    case 8:
+      numberOfDays = 31
+      break
+
+    case 9:
+      numberOfDays = 30
+      break
+
+    case 10:
+      numberOfDays = 31
+      break
+
+    case 11:
+      numberOfDays = 30
+      break
+
+    case 12:
+      numberOfDays = 31
+      break
+
+    default:
+      print("invalid input month")
+      break
+
+  return numberOfDays
+End checkNumberOfDaysOfAMonth
+

@@ -1,0 +1,8 @@
+
+Compiler: Java compiler compiles the java source code into byte code (Object code), which can be run in the java runtime enviroment (JRE).
+
+JRE (translator): A JRE like a translator can transform the byte code into the machine code of a particular type (such as Windows, mac) that an operating system can understand.
+
+For developers: Developers just need to write once and run anywhere (such as Windows, Mac, Android, etc.)
+
+For users: A Windows(Mac) user needs to install the java runtime environment for Windows(Mac) Systems.
