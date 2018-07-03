@@ -1,4 +1,9 @@
 
+a logic value
+a numeric value
+a text based value
+
+
 1. number Strings/Symbols
 
 e.g.,

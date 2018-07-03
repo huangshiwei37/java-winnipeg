@@ -1,16 +1,17 @@
-To read in data from the cosole, the commands are slightly more complicated for Java. 
-We will be using a class for input called Scanner. When using Scanner for input, you need the following line at the top of your application:
 
 import java.util.Scanner;
 
-1. To read in a number from the console, you need to use the nextInt() command, similar to the following:
-int firstNumber;
-
 Scanner in = new Scanner(System.in);
-firstNumber = in.nextInt();
 
-2. To read in text data from the console, you need to use the next() command, similar to the following:
-String userName;
+1. To read an integer
 
-Scanner in = new Scanner(System.in);
-username = in.next();
+intNum = in.nextInt();
+
+2. Read a float number
+
+floatNum = in.nextFloat();
+
+3. Read a string
+
+string = in.next();
+
