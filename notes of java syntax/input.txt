@@ -13,5 +13,6 @@ floatNum = in.nextFloat();
 
 3. Read a string
 
-string = in.next();
+string = in.next(); // read a word util a space
+string = in.nextLine(); // read a sentence in a line
 

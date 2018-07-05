@@ -1,0 +1,11 @@
+
+variable = <condition>? expr1: expr2; 
+
+if (condition){
+  expr1
+}else{
+  expr2
+}
+
+boolean leapYear = true;
+int numberOfDaysinFebruary = leapYear? 29: 28;

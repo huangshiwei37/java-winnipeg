@@ -1,0 +1,15 @@
+
+1. implicit casting: from a type with less bits to another type with more bits
+
+int a = 100;
+float b = a; // implicit casting
+double c = b; // implicit casting
+
+2. explicit casting: from a type with more bits to another type with less bits
+
+double d = 100.0;
+float f = (float) d; // explicit casting
+int a = (int) f; // explicit casting
+
+
+
