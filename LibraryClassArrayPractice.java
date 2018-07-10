@@ -41,6 +41,11 @@ public class LibraryClassArrayPractice{
       System.out.println("Print book " + books[i].name + " requires "
        + books[i].findNumberOfPapersRequired() + " pieces of paper");
     }
+
+    // print books by toString() method
+    for(int i=0; i<books.length; i++){
+      System.out.println(books[i]);
+    }
   }
 
   public static Book findLargestBook(Book[] books){
@@ -73,5 +78,9 @@ class Book{
 
   public int findNumberOfPapersRequired(){
     return (numberOfPages/2) + (numberOfPages%2);
+  }
+
+  public String toString(){
+    return "Book name: " + this.name + " number of pages: " + this.numberOfPages;
   }
 }
