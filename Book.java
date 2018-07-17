@@ -20,6 +20,10 @@ public class Book{
     _numberOfCopies = numberOfCopies;
   }
 
+  public String getName(){
+    return _name;
+  }
+
   public String toString(){
 
     return _name + ", by " + _author + ". "
@@ -27,25 +31,25 @@ public class Book{
   }
 
   // loan a copy of book
-  public boolean loan(){
+  public boolean lendACopy(){
 
-    boolean isLoaned;
+    boolean lendSuccessfully;
 
     if(_numberOfLentCopies < _numberOfCopies){
 
       _numberOfLentCopies++;
-      isLoaned = true;
+      lendSuccessfully = true;
       System.out.println("Thank you! One copy of book \"" + _name + "\" has been lent out successfully!");
     }else{
-      isLoaned = false;
+      lendSuccessfully = false;
       System.out.println("Sorry, no copy of book \"" + _name + "\" is available to lend!");
     }
 
-    return isLoaned;
+    return lendSuccessfully;
   }
 
   // retrun a copy of book
-  public boolean returnABook(){
+  public boolean returnACopy(){
 
     boolean isReturned;
 

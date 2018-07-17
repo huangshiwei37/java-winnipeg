@@ -111,7 +111,14 @@ public class LibraryCheckout{
         selectedBookIndex = scanner.nextInt();              
       }
 
-      books[selectedBookIndex].loan();
+      Book selectedBook = books[selectedBookIndex];
+
+      boolean lendSuccessfully = selectedBook.lendACopy();
+      if (lendSuccessfully){
+         System.out.println("Thank you! One copy of book \"" + selectedBook.getName() + "\" has been lent out successfully!");
+      }else{
+        System.out.println("Sorry, all copies of book \"" + selectedBook.getName() + "\" are out of stock!");
+      }
     }else{
 
       System.out.println();
@@ -139,7 +146,7 @@ public class LibraryCheckout{
         selectedBookIndex = scanner.nextInt();              
       }
 
-      books[selectedBookIndex].returnABook();
+      books[selectedBookIndex].returnACopy();
     }else{
 
       System.out.println();
