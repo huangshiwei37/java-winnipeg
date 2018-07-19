@@ -1,0 +1,37 @@
+﻿Question 1
+
+
+Write a class called Calculator that performs the following calculator operations:
+* Adds two numbers together and returns the result.
+* Subtracts one number from another and returns the result
+* Multiples two numbers and returns the result
+* Divides one number from another and returns the result
+
+
+Make everything in the class static. Additionally, add a function called LastResult which returns the last result that was calculated by any of the functions.
+
+
+In your main class, write a control loop that asks for the following options:
+* 1 - Add two numbers
+* 2 - Subtract two numbers
+* 3 - Multiplies two numbers
+* 4 - Divides two numbers
+* 5 - Shows the last result
+* 6 - Quit
+
+
+Question 2
+
+
+Write a class called InputFromKeyboard that will print out a prompt, and get input from the keyboard using the Scanner class. It should have three functions:
+
+
+* getString - Takes a string for a prompt, prints out the prompt, and returns a string entered by keyboard.
+* getInt - Takes a string for a prompt, prints out the prompt, and returns an integer entered by keyboard.
+* getDouble - Takes a string for a prompt, prints out the prompt, and returns a double entered by keyboard.
+
+
+Have all of these methods be static. As a bonus, try to make the scanner instance also be static, so that you do not need to create a new instance every time you need to use it.
+
+
+In your main class, use the InputFromKeyboard class to ask for the user’s name, age, and account balance. Print out all the collected information.
