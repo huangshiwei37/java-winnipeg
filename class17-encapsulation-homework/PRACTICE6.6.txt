@@ -1,0 +1,36 @@
+﻿Question 1
+
+
+Write a program that models a Clinic. This clinic will have patients, and will tell the user how many nurses are needed, and how many doctors are needed. 
+
+
+* Write a class called Patient. The patient has a Name, as well as a Status. Write an enum for the following statuses for the Patient:
+   * New
+   * Triaged
+   * Admitted
+   * Released
+
+
+* Create 10 patient objects as an array, and give them different names and statuses.
+* Print out the total number doctors needed. 1 doctor is needed for every patient that is currently Admitted.
+* Print out the total number of nurses needed. 1 nurse is needed for every patient that is Triaged, and every patient that is released.
+
+
+Question 2
+
+
+1. When using proper encapsulation, typically what access modifier should be used for the classes’ members?
+   1. Why should that access modifier be used? What is the main benefit?
+1. What access modifier should be used for any getters?
+2. What is an example of an object that intentionally restricts the user from accessing internal data?
+   1. What would be the consequences if that access wasn’t restricted?
+   2. What would the functions be that allow indirect access to that data?
+
+
+Question 3
+
+
+Write a class called Election which will track votes for two different candidates. The class should have the ability to add votes for either candidate, and to tell the user which candidate is the winner, based on who has more votes, or if there is a tie.
+
+
+Make sure to use proper encapsulation so that there is no cheating in the election!
